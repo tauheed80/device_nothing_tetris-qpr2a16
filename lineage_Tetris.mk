@@ -1,36 +1,27 @@
-
 #
 # Copyright (C) 2022 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-#clover flags
-CLOVER_BUILDTYPE := UNOFFICIAL
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_DISABLE_ViperFX := true
 
-# Inherit some common infinity stuff.
+# Inherit some common AlphaDroid stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Enable ADPF pipeline for UI performance
 PRODUCT_PRODUCT_PROPERTIES += \
 persist.vendor.power.adpf.enable=true \
 ro.vendor.powerhal.adpf.enable=true
 
-#crDroid flags
 TARGET_ENABLE_BLUR := true
-TARGET_BOOT_ANIMATION_RES := 1080
 WITH_GMS := true
-#gpu
 GPU_FREQS_PATH := /sys/devices/platform/13000000.mali/devfreq/available_frequencies
 GPU_MIN_FREQ_PATH := /sys/devices/platform/13000000.mali/devfreq/min_freq
 
-# Inherit from Tetris device
+$(call inherit-product, device/nothing/Tetris/alpha.mk)
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
 PRODUCT_NAME := lineage_Tetris
