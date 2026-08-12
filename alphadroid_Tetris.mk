@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common AlphaDroid stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/alphadroid/config/common.mk)
 
 PRODUCT_PRODUCT_PROPERTIES += \
 persist.vendor.power.adpf.enable=true \
@@ -24,7 +24,7 @@ GPU_MIN_FREQ_PATH := /sys/devices/platform/13000000.mali/devfreq/min_freq
 $(call inherit-product, device/nothing/Tetris/alpha.mk)
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
-PRODUCT_NAME := lineage_Tetris
+PRODUCT_NAME := alphadroid_Tetris
 PRODUCT_DEVICE := Tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
