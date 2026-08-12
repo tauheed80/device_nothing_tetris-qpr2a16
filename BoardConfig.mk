@@ -112,9 +112,9 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-# Reserve space for GAPPS
+# Reserve space for GAPPS (Switched from Lineage to AlphaDroid)
 ifeq ($(PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE),ext4)
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/alphadroid/config/BoardConfigReservedSize.mk
 endif
 
 # Platform
